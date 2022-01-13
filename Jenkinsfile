@@ -1,9 +1,5 @@
 pipeline {
-	agent any
-
-	tools{
-		gradle null
-	}
+	
     environment{
         DOCKERHUB_CREDENTIALS = credentials('franciscavera-dockerhub')
     }
