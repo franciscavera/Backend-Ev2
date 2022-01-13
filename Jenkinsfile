@@ -9,7 +9,7 @@ pipeline {
             steps {
                 
 			    catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
-					dir("/var/lib/jenkins/workspace/Jenkinsfile") {
+					dir("/var/lib/jenkins/workspace/") {
 						
                         sh './gradlew test junitTest'
 					}
