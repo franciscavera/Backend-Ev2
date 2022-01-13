@@ -11,7 +11,7 @@ pipeline {
 			    catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
 					dir("/var/lib/jenkins/workspace/BACKEND-EV2/demo2") {
 						
-                        sh './gradlew juniTest'
+                        sh './gradlew test juniTest'
 					}
                 }
 		    }
