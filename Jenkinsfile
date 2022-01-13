@@ -2,7 +2,7 @@ pipeline {
 	agent any
 
 	tools{
-		gradle 'gradle-6.3'
+		gradle 'gradle 6.3'
 	}
     environment{
         DOCKERHUB_CREDENTIALS = credentials('franciscavera-dockerhub')
