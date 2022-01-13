@@ -11,7 +11,7 @@ pipeline {
 			    catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
 					dir("/var/lib/jenkins/workspace/build.gradle") {
 						
-                        sh './gradlew test'
+                        sh 'gradlew test'
 					}
                 }
 		    }
