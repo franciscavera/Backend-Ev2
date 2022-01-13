@@ -7,10 +7,10 @@ pipeline {
 
         stage('JUnit'){
             steps {
-                cleanWS()
+                
 			    catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
-					dir("/var/lib/jenkins/workspace/BACKEND-EV2/demo2") {
-						sh 'chmod +x ./gradlew'
+					dir("/var/lib/jenkins/workspace/BACKEND-EV2/demo2/scr/test") {
+						
                         sh './gradlew test'
 					}
                 }
