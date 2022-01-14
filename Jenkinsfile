@@ -9,13 +9,14 @@ pipeline {
 
         stage('JUnit'){
             steps {
-			    catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
-					dir("/var/lib/jenkins/workspace/Backend-Ev2") {
-			bat 'gradlew tasks'
-						
-                        bat 'gradlew test junitTest'
-					}
+                script {
+                    try {
+                        sh './gradlew clean test --no-daemon' //run a gradle task
+                    } finally {
+                        junit '**/build/test-results/test/*.java' //make the junit test results available in any case (success & failure)
+                    }
                 }
+            }
 		    }
         }
 
