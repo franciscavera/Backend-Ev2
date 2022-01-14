@@ -8,7 +8,7 @@ pipeline {
         stage('JUnit'){
             steps {
 			    catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
-					dir("/var/lib/jenkins/workspace/Backend-Ev2") {
+					dir("/var/lib/jenkins/workspace/JunitTest") {
 						
                         sh './gradlew test'
 					}
