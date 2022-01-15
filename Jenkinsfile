@@ -3,17 +3,20 @@ pipeline {
 
 	
 stages{ 
+    stage('Build'){
+        steps{
+            sh './gradle bootrun'
+        }
+    }
 
     stage('JUnit'){
             steps {
-                script {
+               
                    
-                    catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
-                    		dir("/var/lib/jenkins/workspace/Backend-Ev2/demo2") 
-						
-                        bat './gradlew test'
-                }
-            }
+                 
+						sh './gradlew test'
+                
+            
 		    }
         }
 }
