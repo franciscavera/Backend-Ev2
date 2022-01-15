@@ -1,13 +1,16 @@
+pipeline {
+	agent {label "newslave"}
+    
+    stages {
 
-pipeline{
-    agent {label "newslave"}
-    stages{
-        stages('Hello'){
-            stesps {
+        stage('Hello'){
+            steps {
+			   
                 sh '''
                 java --version
                 '''
-            }
+		    }
         }
-    }
+       
+}
 }
