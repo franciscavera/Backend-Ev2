@@ -12,7 +12,7 @@ pipeline {
                 script {
                    
 
-                    		dir("/var/lib/jenkins/workspace/Backend-Ev2/demo2") {
+                    		dir("/var/lib/jenkins/workspace/Backend-Ev2/demo2") 
 						sh './gradle bootrun'
                         sh './gradlew test'
                 }
