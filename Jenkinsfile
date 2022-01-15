@@ -13,7 +13,7 @@ stages{
     stage('JUnit'){
             steps {
                
-                        dir(./Backend-Ev2/demo2')
+                        dir('./Backend-Ev2/demo2')
 						sh './gradlew test'
                 
             
