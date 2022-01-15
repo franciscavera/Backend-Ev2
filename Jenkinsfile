@@ -3,15 +3,18 @@ pipeline {
 
 	
 stages{ 
-    stage('Unit & Integration Tests') {
+
+    stage('JUnit'){
             steps {
                 script {
-                    try {
-                        sh './gradlew clean test --no-daemon' //run a gradle task
+                   
+                    catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
+                    		dir("/var/lib/jenkins/workspace/Backend-Ev2/demo2/build") 
+						sh './gradle bootrun'
                         sh './gradlew test'
-                    } 
                 }
             }
+		    }
         }
 }
 
