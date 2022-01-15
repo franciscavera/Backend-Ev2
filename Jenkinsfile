@@ -1,24 +1,24 @@
 pipeline {
 	agent any
 
+   tools {
+    gradle "Gradle 6.8.3"
+  }
+
 	
 stages {
 
-        stage('Compile') {
+       stage('JUnit'){
             steps {
-                gradlew('clean', 'classes')
-            }
-        }
-        stage('Unit Tests') {
-            steps {
-                gradlew('test')
-            }
-            post {
-                always {
-                    junit '**/build/test-results/test/TEST-*.xml'
+			    catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
+					dir("/var/lib/jenkins/workspace/Backend-Ev2/demo2") {
+						sh 'gradle bootrun'
+                        sh './gradle test'
+					}
                 }
-            }
+		    }
         }
+
 
 
 }
