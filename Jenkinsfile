@@ -2,8 +2,8 @@ pipeline {
 	agent any
 
 	
-
-stage('Unit & Integration Tests') {
+stages{ 
+    stage('Unit & Integration Tests') {
             steps {
                 script {
                     try {
@@ -14,4 +14,7 @@ stage('Unit & Integration Tests') {
                 }
             }
         }
+}
+
+
 }
