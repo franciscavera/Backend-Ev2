@@ -2,7 +2,7 @@ pipeline {
 	agent any
 
    tools {
-    gradle "gradle 6.8.3"
+    gradle 'gradle 6.8.3'
   }
 
 	
