@@ -5,8 +5,8 @@ pipeline {
 stages{ 
     stage('Build'){
         steps{
-            dir("/var/lib/jenkins/workspace/Backend-Ev2/demo2") 
-            sh './gradle assemble'
+            
+            sh './gradle bootrun'
         }
     }
 
