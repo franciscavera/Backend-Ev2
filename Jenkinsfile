@@ -2,22 +2,18 @@ pipeline {
 	agent any
 
    tools {
-    gradle 'gradle 6.8.3'
-  }
-
+        gradle "GRADLE_LATEST"
+    }
+ 
 	
 stages {
-
-       stage('JUnit'){
+        stage('Gradle') {
             steps {
-			    catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
-					dir("/var/lib/jenkins/workspace/Backend-Ev2/demo2") {
-						sh 'gradlew bootrun'
-                        sh './gradlew test'
-					}
-                }
-		    }
+                sh 'gradle --version'
+                echo 'version '
+            }
         }
+       
 
 
 
