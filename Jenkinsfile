@@ -2,19 +2,22 @@ pipeline {
 	agent any
 
 	
-stages{ 
-   
-
-    stage('JUnit'){
+stages {
+        stage('Compile') {
             steps {
-               
-                       
-				sh './gradle test'
-                
-            
-		    }
+                gradlew('clean', 'classes')
+            }
         }
-}
+        stage('Unit Tests') {
+            steps {
+                gradlew('test')
+            }
+            post {
+                always {
+                    junit '**/build/test-results/test/TEST-*.xml'
+                }
+            }
+        }
 
 
 }
