@@ -2,7 +2,7 @@
 pipeline{
     agent {label "newslave"}
     stages{
-        stage('Hello'){
+        stages('Hello'){
             stesps {
                 sh '''
                 java --version
