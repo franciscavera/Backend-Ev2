@@ -12,8 +12,8 @@ stages {
             steps {
 			    catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
 					dir("/var/lib/jenkins/workspace/Backend-Ev2/demo2") {
-						sh 'gradle bootrun'
-                        sh './gradle test'
+						sh 'gradlew bootrun'
+                        sh './gradlew test'
 					}
                 }
 		    }
