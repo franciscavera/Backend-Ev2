@@ -1,10 +1,7 @@
 pipeline {
 	agent any
 
-   tools {
-        gradle 'GRADLE_LATEST'
-            }
- 
+   
 	
 stages {
         stage('Gradle') {
