@@ -5,7 +5,7 @@ pipeline {
 stages{ 
     stage('Build'){
         steps{
-            
+            dir("/var/lib/jenkins/workspace/Backend-Ev2/demo2") 
             sh './gradle assemble'
         }
     }
@@ -13,7 +13,7 @@ stages{
     stage('JUnit'){
             steps {
                
-                        dir('./Backend-Ev2/demo2')
+                        dir("/var/lib/jenkins/workspace/Backend-Ev2/demo2") 
 						sh './gradle test'
                 
             
