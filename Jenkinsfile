@@ -11,6 +11,16 @@ pipeline {
                 '''
 		    }
         }
+        stage("Pruebas unitarias"){
+            steps{
+                    dir("/var/lib/jenkins/workspace/Tingeso/demo2"){
+                    sh ''' chmod +x ./gradlew '''
+                    sh ''' ./gradlew test '''
+        }
+            }
+        
+    }
+
        
 }
 }
