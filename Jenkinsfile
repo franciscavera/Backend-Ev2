@@ -13,7 +13,7 @@ pipeline {
         }
         stage("Pruebas unitarias"){
             steps{
-                    dir("/var/lib/jenkins/workspace/pruebaFran"){
+                    dir("/var/lib/jenkins/workspace/demo2"){
                    
                     sh ''' ./gradlew test '''
         }
