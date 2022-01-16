@@ -14,7 +14,7 @@ pipeline {
         stage("Pruebas unitarias"){
             steps{
                     dir("/var/lib/jenkins/workspace/Backend-Ev2/demo2"){
-                    sh ''' chmod +x ./gradlew '''
+                   
                     sh ''' ./gradlew test '''
         }
             }
